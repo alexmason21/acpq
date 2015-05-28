@@ -19,6 +19,8 @@ requestUrl = '/demo-tts/DemoHTML5Form_V2.php?langdemo=Powered+by+%3Ca+href%3D%22
 
 tts = null
 
+process.title = 'acpq'
+
 class TTS
 	constructor: ->
 		@queue = []

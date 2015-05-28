@@ -33,6 +33,8 @@
 
   tts = null;
 
+  process.title = 'acpq';
+
   TTS = (function() {
     function TTS() {
       this.queue = [];
