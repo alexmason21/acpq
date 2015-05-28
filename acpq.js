@@ -37,6 +37,8 @@
     function TTS() {
       this.queue = [];
       this.playing = false;
+      this.voice = 'Ipek';
+      this.language = 'sonid34';
     }
 
     TTS.prototype.say = function(quote) {
@@ -54,13 +56,23 @@
     };
 
     TTS.prototype.fetch = function() {
-      var callback, data, o, options, req, that;
+      var callback, data, e, hash, o, options, req, that;
       this.playing = true;
       o = this.queue.pop();
+      hash = crypto.createHash('md5').update("" + this.voice + o.line).digest('hex');
+      o.path = "store/" + hash + ".mp3";
+      try {
+        if (fs.lstatSync(o.path).isFile) {
+          this.play(o.path);
+          return;
+        }
+      } catch (_error) {
+        e = _error;
+      }
       that = this;
       data = querystring.stringify({
-        MyLanguages: 'sonid10',
-        MySelectedVoice: 'Sharon',
+        MyLanguages: this.language,
+        MySelectedVoice: this.voice,
         MyTextForTTS: o.line,
         t: 1,
         SendToVaaS: 0
@@ -115,8 +127,7 @@
     TTS.prototype.download = function(o) {
       var file, options, that;
       that = this;
-      o.file = 'latest.mp3';
-      file = fs.createWriteStream(o.file);
+      file = fs.createWriteStream(o.path);
       options = {
         host: url.parse(o.link).host,
         path: url.parse(o.link).pathname
@@ -127,7 +138,7 @@
         });
         return res.on('end', function() {
           file.end();
-          return that.play(o.file);
+          return that.play(o.path);
         });
       });
       return true;

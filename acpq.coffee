@@ -24,6 +24,9 @@ class TTS
 		@queue = []
 		@playing = false
 
+		@voice = 'Ipek'
+		@language = 'sonid34'
+
 	say: (quote) ->
 		o = line: quote, link: '', file: null
 		@queue.push o
@@ -35,11 +38,21 @@ class TTS
 
 		o = @queue.pop()
 
+		hash = crypto.createHash('md5').update("#{@voice}#{o.line}").digest('hex')
+		o.path = "store/#{hash}.mp3"
+
+		try
+			if fs.lstatSync(o.path).isFile
+				@play o.path
+				return
+		catch e
+			;
+
 		that = this
 
 		data = querystring.stringify
-			MyLanguages: 'sonid10'
-			MySelectedVoice: 'Sharon'
+			MyLanguages: @language
+			MySelectedVoice: @voice
 			MyTextForTTS: o.line
 			t: 1
 			SendToVaaS: 0
@@ -98,8 +111,7 @@ class TTS
 	download: (o) ->
 		that = this
 
-		o.file = 'latest.mp3'
-		file = fs.createWriteStream o.file
+		file = fs.createWriteStream o.path
 
 		options =
 			host: url.parse(o.link).host
@@ -109,7 +121,7 @@ class TTS
 			res.on 'data', (data) -> file.write(data)
 			res.on 'end', ->
 				file.end()
-				that.play o.file
+				that.play o.path
 
 		true
 
