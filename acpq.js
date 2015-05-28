@@ -37,8 +37,8 @@
     function TTS() {
       this.queue = [];
       this.playing = false;
-      this.voice = 'Ipek';
-      this.language = 'sonid34';
+      this.language = 'sonid10';
+      this.voice = 'Sharon';
     }
 
     TTS.prototype.say = function(quote) {

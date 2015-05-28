@@ -24,8 +24,8 @@ class TTS
 		@queue = []
 		@playing = false
 
-		@voice = 'Ipek'
-		@language = 'sonid34'
+		@language = 'sonid10'
+		@voice = 'Sharon'
 
 	say: (quote) ->
 		o = line: quote, link: '', file: null
