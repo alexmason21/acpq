@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset=utf-8>
+    <title>Acapela Text to Speech Demo</title>
+    <link rel="stylesheet" href="style_general.css">
+    <link href="skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="js/hidevoices2.js"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    $(document).ready(function(){
+
+            var myPhpVar = 'http://H-IR-SSD-1.acapela-group.com/MESSAGES/012099097112101108097071114111117112/AcapelaGroup_WebDemo_HTML/sounds/109193456_daa25e1286a69.mp3';
+
+            $("#jquery_jplayer_1").jPlayer({
+                    ready: function () {
+                            $(this).jPlayer("setMedia", {
+                                    mp3:myPhpVar
+                            }).jPlayer("play");
+                    },
+                    swfPath: "js",
+                    supplied: "mp3",
+                    wmode: "window",
+            });
+    });
+    //]]>
+    </script>
+  </head>
+     <body style="min-height:800px;" onload="javascript:hide_voices('sonid10')">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  <div id="demo-html">
+  <div id="demo-container">
+            <h2>acapela text to speech demo</h2>
+
+    <form id="typetalkdemo" method="POST">
+              
+     <fieldset>
+        <legend>select a language</legend>
+					<select name="MyLanguages" id="MyLanguages"  size="1" onchange="javascript:hide_voices(this.value);changevoice(this.options[document.getElementById('MyLanguages').selectedIndex].id)" onfocus="javascript:hideplayer('player')">
+                   			             
+                <option id="0" value="sonid0"  style="background-image: url('Elements/flags/Arabic.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Arabic                </option>
+                
+                                 			             
+                <option id="1" value="sonid1"  style="background-image: url('Elements/flags/Catalan.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Catalan                </option>
+                
+                                 			             
+                <option id="2" value="sonid2"  style="background-image: url('Elements/flags/Czech.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Czech                </option>
+                
+                                 			             
+                <option id="3" value="sonid3"  style="background-image: url('Elements/flags/Danish.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Danish                </option>
+                
+                                 			             
+                <option id="4" value="sonid4"  style="background-image: url('Elements/flags/Dutch (Belgium).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Dutch (Belgium)                </option>
+                
+                                 			             
+                <option id="5" value="sonid5"  style="background-image: url('Elements/flags/Dutch (Netherlands).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Dutch (Netherlands)                </option>
+                
+                                 			             
+                <option id="6" value="sonid6"  style="background-image: url('Elements/flags/English (AU).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           English (AU)                </option>
+                
+                                 			             
+                <option id="7" value="sonid7"  style="background-image: url('Elements/flags/English (India).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           English (India)                </option>
+                
+                                 			             
+                <option id="8" value="sonid8"  style="background-image: url('Elements/flags/English (Scottish).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           English (Scottish)                </option>
+                
+                                 			             
+                <option id="9" value="sonid9"  style="background-image: url('Elements/flags/English (UK).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           English (UK)                </option>
+                
+                                 			             
+                <option id="10" value="sonid10"  style="background-image: url('Elements/flags/English (USA).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           English (USA)                </option>
+                
+                                 			             
+                <option id="11" value="sonid11"  style="background-image: url('Elements/flags/Faroese.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Faroese                </option>
+                
+                                 			             
+                <option id="12" value="sonid12"  style="background-image: url('Elements/flags/Finnish.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Finnish                </option>
+                
+                                 			             
+                <option id="13" value="sonid13"  style="background-image: url('Elements/flags/French (Belgium).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           French (Belgium)                </option>
+                
+                                 			             
+                <option id="14" value="sonid14"  style="background-image: url('Elements/flags/French (Canada).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           French (Canada)                </option>
+                
+                                 			             
+                <option id="15" value="sonid15"  style="background-image: url('Elements/flags/French (France).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           French (France)                </option>
+                
+                                 			             
+                <option id="16" value="sonid16"  style="background-image: url('Elements/flags/German.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           German                </option>
+                
+                                 			             
+                <option id="17" value="sonid17"  style="background-image: url('Elements/flags/Greek.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Greek                </option>
+                
+                                 			             
+                <option id="18" value="sonid18"  style="background-image: url('Elements/flags/Italian.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Italian                </option>
+                
+                                 			             
+                <option id="19" value="sonid19"  style="background-image: url('Elements/flags/Japanese.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Japanese                </option>
+                
+                                 			             
+                <option id="20" value="sonid20"  style="background-image: url('Elements/flags/Korean.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Korean                </option>
+                
+                                 			             
+                <option id="21" value="sonid21"  style="background-image: url('Elements/flags/Mandarin.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Mandarin                </option>
+                
+                                 			             
+                <option id="22" value="sonid22"  style="background-image: url('Elements/flags/Norwegian.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Norwegian                </option>
+                
+                                 			             
+                <option id="23" value="sonid23"  style="background-image: url('Elements/flags/Polish.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Polish                </option>
+                
+                                 			             
+                <option id="24" value="sonid24"  style="background-image: url('Elements/flags/Portuguese (Brazil).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Portuguese (Brazil)                </option>
+                
+                                 			             
+                <option id="25" value="sonid25"  style="background-image: url('Elements/flags/Portuguese (Portugal).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Portuguese (Portugal)                </option>
+                
+                                 			             
+                <option id="26" value="sonid26"  style="background-image: url('Elements/flags/Russian.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Russian                </option>
+                
+                                 			             
+                <option id="27" value="sonid27"  style="background-image: url('Elements/flags/Sami (North).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Sami (North)                </option>
+                
+                                 			             
+                <option id="28" value="sonid28"  style="background-image: url('Elements/flags/Spanish (Spain).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Spanish (Spain)                </option>
+                
+                                 			             
+                <option id="29" value="sonid29"  style="background-image: url('Elements/flags/Spanish (US).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Spanish (US)                </option>
+                
+                                 			             
+                <option id="30" value="sonid30"  style="background-image: url('Elements/flags/Swedish.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Swedish                </option>
+                
+                                 			             
+                <option id="31" value="sonid31"  style="background-image: url('Elements/flags/Swedish (Finland).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Swedish (Finland)                </option>
+                
+                                 			             
+                <option id="32" value="sonid32"  style="background-image: url('Elements/flags/Swedish (Gothenburg).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Swedish (Gothenburg)                </option>
+                
+                                 			             
+                <option id="33" value="sonid33"  style="background-image: url('Elements/flags/Swedish (Scanian).png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Swedish (Scanian)                </option>
+                
+                                 			             
+                <option id="34" value="sonid34"  style="background-image: url('Elements/flags/Turkish.png'); padding-left:20px; background-repeat:no-repeat; color:#47778a;">
+           Turkish                </option>
+                
+                                 </select> 
+        </fieldset>
+      <fieldset>
+        <legend>select a voice</legend>
+
+                 <select name="0" id="sonid0" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid0 " value="Leila" >Leila</option>
+                                       
+                    <option class="allvoices sonid0 " value="Mehdi" >Mehdi</option>
+                                       
+                    <option class="allvoices sonid0 " value="Nizar" >Nizar</option>
+                                       
+                    <option class="allvoices sonid0 " value="Salma" >Salma</option>
+                    </select>
+               
+                         <select name="1" id="sonid1" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid1 " value="Laia" >Laia</option>
+                    </select>
+               
+                         <select name="2" id="sonid2" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid2 " value="Eliska" >Eliska</option>
+                    </select>
+               
+                         <select name="3" id="sonid3" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid3 " value="Mette" >Mette</option>
+                                       
+                    <option class="allvoices sonid3 " value="Rasmus" >Rasmus</option>
+                    </select>
+               
+                         <select name="4" id="sonid4" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid4 " value="Zoe" >Zoe</option>
+                                       
+                    <option class="allvoices sonid4 " value="Jeroen" >Jeroen</option>
+                                       
+                    <option class="allvoices sonid4 " value="JeroenHappy (emotive voice)" >JeroenHappy (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid4 " value="JeroenSad (emotive voice)" >JeroenSad (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid4 " value="Sofie" >Sofie</option>
+                    </select>
+               
+                         <select name="5" id="sonid5" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid5 " value="Jasmijn" >Jasmijn</option>
+                                       
+                    <option class="allvoices sonid5 " value="Daan" >Daan</option>
+                                       
+                    <option class="allvoices sonid5 " value="Femke" >Femke</option>
+                                       
+                    <option class="allvoices sonid5 " value="Max" >Max</option>
+                    </select>
+               
+                         <select name="6" id="sonid6" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid6 " value="Tyler" >Tyler</option>
+                                       
+                    <option class="allvoices sonid6 " value="Lisa" >Lisa</option>
+                                       
+                    <option class="allvoices sonid6 " value="Olivia (genuine child voice)" >Olivia (genuine child voice)</option>
+                                       
+                    <option class="allvoices sonid6 " value="Liam (genuine child voice)" >Liam (genuine child voice)</option>
+                    </select>
+               
+                         <select name="7" id="sonid7" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid7 " value="Deepa" >Deepa</option>
+                    </select>
+               
+                         <select name="8" id="sonid8" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid8 " value="Rhona" >Rhona</option>
+                    </select>
+               
+                         <select name="9" id="sonid9" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid9 " value="Rachel" >Rachel</option>
+                                       
+                    <option class="allvoices sonid9 " value="Graham" >Graham</option>
+                                       
+                    <option class="allvoices sonid9 " value="Harry (genuine child voice)" >Harry (genuine child voice)</option>
+                                       
+                    <option class="allvoices sonid9 " value="Lucy" >Lucy</option>
+                                       
+                    <option class="allvoices sonid9 " value="Nizareng" >Nizareng</option>
+                                       
+                    <option class="allvoices sonid9 " value="Peter" >Peter</option>
+                                       
+                    <option class="allvoices sonid9 " value="PeterHappy (emotive voice)" >PeterHappy (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid9 " value="PeterSad (emotive voice)" >PeterSad (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid9 " value="QueenElizabeth (her majesty)" >QueenElizabeth (her majesty)</option>
+                                       
+                    <option class="allvoices sonid9 " value="Rosie (genuine child voice)" >Rosie (genuine child voice)</option>
+                    </select>
+               
+                         <select name="10" id="sonid10" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid10 " value="Sharon" selected>Sharon</option>
+                                       
+                    <option class="allvoices sonid10 " value="Ella (genuine child voice)" >Ella (genuine child voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="EmilioEnglish (genuine child voice)" >EmilioEnglish (genuine child voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="Josh (genuine child voice)" >Josh (genuine child voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="Karen" >Karen</option>
+                                       
+                    <option class="allvoices sonid10 " value="Kenny (artificial child voice)" >Kenny (artificial child voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="Laura" >Laura</option>
+                                       
+                    <option class="allvoices sonid10 " value="Micah" >Micah</option>
+                                       
+                    <option class="allvoices sonid10 " value="Nelly (artificial child voice)" >Nelly (artificial child voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="Rod" >Rod</option>
+                                       
+                    <option class="allvoices sonid10 " value="Ryan" >Ryan</option>
+                                       
+                    <option class="allvoices sonid10 " value="Saul" >Saul</option>
+                                       
+                    <option class="allvoices sonid10 " value="Scott (genuine teenager voice)" >Scott (genuine teenager voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="Tracy" >Tracy</option>
+                                       
+                    <option class="allvoices sonid10 " value="ValeriaEnglish (genuine child voice)" >ValeriaEnglish (genuine child voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="Will" >Will</option>
+                                       
+                    <option class="allvoices sonid10 " value="WillBadGuy (emotive voice)" >WillBadGuy (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="WillFromAfar (emotive voice)" >WillFromAfar (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="WillHappy (emotive voice)" >WillHappy (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="WillLittleCreature (emotive voice)" >WillLittleCreature (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="WillOldMan (emotive voice)" >WillOldMan (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="WillSad (emotive voice)" >WillSad (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid10 " value="WillUpClose (emotive voice)" >WillUpClose (emotive voice)</option>
+                    </select>
+               
+                         <select name="11" id="sonid11" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid11 " value="Hanna" >Hanna</option>
+                                       
+                    <option class="allvoices sonid11 " value="Hanus" >Hanus</option>
+                    </select>
+               
+                         <select name="12" id="sonid12" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid12 " value="Sanna" >Sanna</option>
+                    </select>
+               
+                         <select name="13" id="sonid13" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid13 " value="Justine" >Justine</option>
+                    </select>
+               
+                         <select name="14" id="sonid14" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid14 " value="Louise" >Louise</option>
+                    </select>
+               
+                         <select name="15" id="sonid15" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid15 " value="Manon" >Manon</option>
+                                       
+                    <option class="allvoices sonid15 " value="Alice" >Alice</option>
+                                       
+                    <option class="allvoices sonid15 " value="Antoine" >Antoine</option>
+                                       
+                    <option class="allvoices sonid15 " value="AntoineFromAfar (emotive voice)" >AntoineFromAfar (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid15 " value="AntoineHappy (emotive voice)" >AntoineHappy (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid15 " value="AntoineSad (emotive voice)" >AntoineSad (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid15 " value="AntoineUpClose (emotive voice)" >AntoineUpClose (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid15 " value="Bruno" >Bruno</option>
+                                       
+                    <option class="allvoices sonid15 " value="Claire" >Claire</option>
+                                       
+                    <option class="allvoices sonid15 " value="Julie" >Julie</option>
+                                       
+                    <option class="allvoices sonid15 " value="Margaux" >Margaux</option>
+                                       
+                    <option class="allvoices sonid15 " value="MargauxHappy (emotive voice)" >MargauxHappy (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid15 " value="MargauxSad (emotive voice)" >MargauxSad (emotive voice)</option>
+                    </select>
+               
+                         <select name="16" id="sonid16" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid16 " value="Claudia" >Claudia</option>
+                                       
+                    <option class="allvoices sonid16 " value="Andreas" >Andreas</option>
+                                       
+                    <option class="allvoices sonid16 " value="Jonas (genuine child voice)" >Jonas (genuine child voice)</option>
+                                       
+                    <option class="allvoices sonid16 " value="Julia" >Julia</option>
+                                       
+                    <option class="allvoices sonid16 " value="Klaus" >Klaus</option>
+                                       
+                    <option class="allvoices sonid16 " value="Lea (genuine child voice)" >Lea (genuine child voice)</option>
+                                       
+                    <option class="allvoices sonid16 " value="Sarah" >Sarah</option>
+                    </select>
+               
+                         <select name="17" id="sonid17" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid17 " value="Dimitris" >Dimitris</option>
+                                       
+                    <option class="allvoices sonid17 " value="DimitrisHappy (emotive voice)" >DimitrisHappy (emotive voice)</option>
+                                       
+                    <option class="allvoices sonid17 " value="DimitrisSad (emotive voice)" >DimitrisSad (emotive voice)</option>
+                    </select>
+               
+                         <select name="18" id="sonid18" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid18 " value="Fabiana" >Fabiana</option>
+                                       
+                    <option class="allvoices sonid18 " value="Chiara" >Chiara</option>
+                                       
+                    <option class="allvoices sonid18 " value="Vittorio" >Vittorio</option>
+                    </select>
+               
+                         <select name="19" id="sonid19" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid19 " value="Sakura" >Sakura</option>
+                    </select>
+               
+                         <select name="20" id="sonid20" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid20 " value="Minji" >Minji</option>
+                    </select>
+               
+                         <select name="21" id="sonid21" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid21 " value="Lulu" >Lulu</option>
+                    </select>
+               
+                         <select name="22" id="sonid22" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid22 " value="Bente" >Bente</option>
+                                       
+                    <option class="allvoices sonid22 " value="Kari" >Kari</option>
+                                       
+                    <option class="allvoices sonid22 " value="Olav" >Olav</option>
+                    </select>
+               
+                         <select name="23" id="sonid23" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid23 " value="Monika" >Monika</option>
+                                       
+                    <option class="allvoices sonid23 " value="Ania" >Ania</option>
+                    </select>
+               
+                         <select name="24" id="sonid24" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid24 " value="Marcia" >Marcia</option>
+                    </select>
+               
+                         <select name="25" id="sonid25" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid25 " value="Celia" >Celia</option>
+                    </select>
+               
+                         <select name="26" id="sonid26" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid26 " value="Alyona" >Alyona</option>
+                    </select>
+               
+                         <select name="27" id="sonid27" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid27 " value="Biera" >Biera</option>
+                                       
+                    <option class="allvoices sonid27 " value="Elle" >Elle</option>
+                    </select>
+               
+                         <select name="28" id="sonid28" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid28 " value="Ines" >Ines</option>
+                                       
+                    <option class="allvoices sonid28 " value="Antonio" >Antonio</option>
+                                       
+                    <option class="allvoices sonid28 " value="Maria" >Maria</option>
+                    </select>
+               
+                         <select name="29" id="sonid29" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid29 " value="Rodrigo" >Rodrigo</option>
+                                       
+                    <option class="allvoices sonid29 " value="Emilio (genuine child voice)" >Emilio (genuine child voice)</option>
+                                       
+                    <option class="allvoices sonid29 " value="Rosa" >Rosa</option>
+                                       
+                    <option class="allvoices sonid29 " value="Valeria (genuine child voice)" >Valeria (genuine child voice)</option>
+                    </select>
+               
+                         <select name="30" id="sonid30" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid30 " value="Elin" >Elin</option>
+                                       
+                    <option class="allvoices sonid30 " value="Emil" >Emil</option>
+                                       
+                    <option class="allvoices sonid30 " value="Emma" >Emma</option>
+                                       
+                    <option class="allvoices sonid30 " value="Erik" >Erik</option>
+                    </select>
+               
+                         <select name="31" id="sonid31" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid31 " value="Samuel" >Samuel</option>
+                    </select>
+               
+                         <select name="32" id="sonid32" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid32 " value="Kal" >Kal</option>
+                    </select>
+               
+                         <select name="33" id="sonid33" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid33 " value="Mia" >Mia</option>
+                    </select>
+               
+                         <select name="34" id="sonid34" style="display:none" class="allselects" onfocus="javascript:hideplayer('player')">
+
+                               
+                    <option class="allvoices sonid34 " value="Ipek" >Ipek</option>
+                    </select>
+               
+                        
+       
+      </fieldset>
+
+      <fieldset>
+        <legend>type your text here</legend>
+
+        <!--<textarea rows="7" cols="30" name="MyTextForTTS" required="required" maxlength="300">-->
+   <textarea rows="7" cols="30" placeholder="The User of this demo undertakes to use the demo in accordance with customs and standard practices. the User shall ensure that the demo will not be used to create prompts which are unlawful, harmful, threatening, abusive, harassing, tortuous, defamatory, vulgar, obscene, libellous, invasive of another's privacy, hateful, or racially, ethnically or otherwise objectionable." name="MyTextForTTS" required="required" maxlength="300">heh</textarea>
+        </fieldset>
+      
+      <fieldset>
+          <legend></legend>
+        <input type="hidden" name="t" value="1">
+        <button type="submit" name="SendToVaaS" id="listen" >listen!</button>
+     </fieldset>
+        		 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+		<div id="jp_container_1" class="jp-audio">
+			<div class="jp-type-single">
+				<div class="jp-gui jp-interface">
+                <div class="jp-progress">
+                    <div class="jp-current-time"></div>
+						<div class="jp-seek-bar">
+							<div class="jp-play-bar"></div>
+
+						</div>
+					</div>
+					<ul class="jp-controls">
+						<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+						<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+						<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+						<!--<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>-->
+					</ul>
+				
+					<!--<div class="jp-volume-bar">
+						<div class="jp-volume-bar-value"></div>
+					</div>-->
+					<!--<div class="jp-duration"></div><div id="totaltime">total time: </div>-->
+					
+				</div>
+				
+				<div class="jp-no-solution">
+					<span>Update Required</span>
+					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+				</div>
+			</div>
+		</div>
+         
+        
+    </form>
+
+               <div id="report-demo">
+
+                        <form id="GoToReportAB" action="DemoHTMLReportABug.php" method="POST">
+                             <input type="hidden" name="DemoRBVoice" value="Sharon">
+                             <input type="hidden" name="DemoRBText" value="heh">
+                             <input type="hidden" name="DemoRBLanguage" value="sonid10">
+                             <input type="hidden" name="DemoRBSndId" value="109193456_daa25e1286a69">
+                             <input type="hidden" name="DemoRBCloseReturn" value="DemoHTML5Form_V2.php">
+                        </form>
+                       <a href="#" onclick="javascript:document.getElementById('GoToReportAB').submit()"><font size="2">Report a bug</font></a>
+                       
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="/demo-nosound/?109193456_daa25e1286a69" target="_BLANK"><font size="2">No sound ?</font></a>&nbsp;&nbsp;&nbsp;
+              <a href="/personal-use/" target="_BLANK"><font size="2">More ...</font></a>
+                      </div>
+        
+</div></div>&nbsp;<div id="plusdemo"><div style="margin:0 auto;display:inline;" class="fb-like" data-send="true" data-layout="button_count" data-width="300" data-show-faces="false" data-href="http://www.facebook.com/acapelagroup"></div></div><div id="tandc"><a href="#" onclick="javascript:showdiv('termsandconditions')">terms & conditions</a><div id="termsandconditions" style="display:none;"><a href="#" class="closediv" onclick="javascript:hidediv('termsandconditions')"><img src="images/close.png" alt="X" /></a>Powered by <a href=\"http://www.acapela-vaas.com\">Acapela Voice as a Service</a>. For demo and evaluation purpose only, for commercial use of generated sound files please go to <a href=\"http://www.acapela-box.com\">www.acapela-box.com</a></div></div>
+  </body>
+</html>
