@@ -1,16 +1,19 @@
+os = require('os')
 fs = require('fs')
-colors = require('colors')
-irc = require('irc')
+http = require('http')
 spawn = require('child_process').spawn
 exec = require('child_process').exec
-http = require('http')
-querystring = require('querystring')
+
 url = require('url')
 crypto = require('crypto')
+querystring = require('querystring')
 
-console.log ''
-console.log "     -~=. Acapela-group Quoter .=~-".green
-console.log ''
+colors = require('colors')
+irc = require('irc')
+
+art = fs.readFileSync('art.txt').toString().split '\n'
+for i in art
+	console.log i.cyan
 
 requestUrl = '/demo-tts/DemoHTML5Form_V2.php?langdemo=Powered+by+%3Ca+href%3D%22http%3A%2F%2Fwww.acapela-vaas.com%22%3EAcapela+Voice+as+a+Service%3C%2Fa%3E.+For+demo+and+evaluation+purpose+only%2C+for+commercial+use+of+generated+sound+files+please+go+to+%3Ca+href%3D%22http%3A%2F%2Fwww.acapela-box.com%22%3Ewww.acapela-box.com%3C%2Fa%3E'
 
@@ -112,7 +115,6 @@ class TTS
 
 	play: (file) ->
 		that = this
-		console.log "about to play #{file}"
 		vlc = exec "\"E:/Program Files (x86)/VideoLAN/VLC/vlc.exe\" -Idummy #{file} vlc://quit"
 		vlc.on 'exit', (code) -> that.next()
 		true
@@ -124,9 +126,6 @@ class TTS
 
 
 tts = new TTS
-
-tts.say 'Things are actually working out'
-tts.say 'Oh my it works'
 
 client = new irc.Client '149.210.223.123', 'acpq',
 	debug: no
