@@ -31,7 +31,7 @@ class TTS
 
 	say: (quote) ->
 		o = line: quote, link: '', file: null
-		@queue.push o
+		@queue.unshift o
 		@fetch() if not @playing and @queue.length is 1
 		true
 
@@ -145,6 +145,7 @@ client = new irc.Client '149.210.223.123', 'acpq',
 	debug: no
 	channels: ['#gta']
 	port: 6667
+	autoRejoin: true
 
 client.addListener 'error', (message) ->
 	#console.log 'error'

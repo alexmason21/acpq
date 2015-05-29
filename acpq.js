@@ -50,7 +50,7 @@
         link: '',
         file: null
       };
-      this.queue.push(o);
+      this.queue.unshift(o);
       if (!this.playing && this.queue.length === 1) {
         this.fetch();
       }
@@ -173,7 +173,8 @@
   client = new irc.Client('149.210.223.123', 'acpq', {
     debug: false,
     channels: ['#gta'],
-    port: 6667
+    port: 6667,
+    autoRejoin: true
   });
 
   client.addListener('error', function(message) {});
