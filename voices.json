@@ -30,15 +30,21 @@
 	},
 
 	"Top Gear": {
-		"voice": "PeterHappy (emotive voice)",
+		"voice": "Graham",
 		"language": "sonid9",
-		"description": "Sounds like a Top Gear guy."
+		"description": "Guy sounds middle-aged, with low character."
 	},
 
-	"Micah": {
+	"British": {
+		"voice": "PeterHappy (emotive voice)",
+		"language": "sonid9",
+		"description": ""
+	},
+
+	"Afro-American": {
 		"voice": "Micah",
 		"language": "sonid10",
-		"description": "Pretty cool guy with a natural voice."
+		"description": "Pretty cool guy, somewhat afro american."
 	},
 
 	"Dear Esther": {

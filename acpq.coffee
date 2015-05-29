@@ -26,7 +26,7 @@ requestUrl = '/demo-tts/DemoHTML5Form_V2.php?langdemo=Powered+by+%3Ca+href%3D%22
 
 tts = null
 
-process.title = 'acpq'
+process.title = "acpq @ #{acpq.config.speaker}"
 
 class TTS
 	constructor: ->

@@ -42,7 +42,7 @@
 
   tts = null;
 
-  process.title = 'acpq';
+  process.title = "acpq @ " + acpq.config.speaker;
 
   TTS = (function() {
     function TTS() {
