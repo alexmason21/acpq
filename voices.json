@@ -1,0 +1,68 @@
+{
+	"Sharon": {
+		"voice": "Sharon",
+		"language": "sonid10",
+		"description": "This is the default voice for the demo, and overall the best."
+	},
+
+	"Evil": {
+		"voice": "WillBadGuy (emotive voice)",
+		"language": "sonid10",
+		"description": "A really low, cartoonic voice."
+	},
+
+	"Lucy": {
+		"voice": "Lucy",
+		"language": "sonid9",
+		"description": "She sounds like a Discovery channel narrator."
+	},
+
+	"Tracy": {
+		"voice": "Tracy",
+		"language": "sonid10",
+		"description": "She sounds really attractive. She sounds happy."
+	},
+
+	"Rhona": {
+		"voice": "Rhona",
+		"language": "sonid8",
+		"description": "The only Scottish voice. Female."
+	},
+
+	"Top Gear": {
+		"voice": "PeterHappy (emotive voice)",
+		"language": "sonid9",
+		"description": "Sounds like a Top Gear guy."
+	},
+
+	"Micah": {
+		"voice": "Micah",
+		"language": "sonid10",
+		"description": "Pretty cool guy with a natural voice."
+	},
+
+	"Dear Esther": {
+		"voice": "PeterSad (emotive voice)",
+		"language": "sonid9",
+		"description": "Sounds really grave, and reminds me of the narrator."
+	},
+	
+	"Sad": {
+		"voice": "WillSad (emotive voice)",
+		"language": "sonid10",
+		"description": "Sounds pretty genuinely sad."
+	},
+
+	"Yoda": {
+		"voice": "WillLittleCreature (emotive voice)",
+		"language": "sonid10",
+		"description": "Sounds exactly like Yoda from Star Wars."
+	},
+
+	"Ipek": {
+		"voice": "Ipek",
+		"language": "sonid34",
+		"description": "Turkish woman. Her English is quite broken though."
+	}
+
+}

@@ -11,8 +11,15 @@ querystring = require('querystring')
 colors = require('colors')
 irc = require('irc')
 
-art = fs.readFileSync('art.txt').toString().split '\n'
-for i in art
+acpq =
+	config: JSON.parse fs.readFileSync 'config.json', 'utf8'
+	voices: JSON.parse fs.readFileSync 'voices.json', 'utf8'
+	art: fs.readFileSync('art.txt').toString().split '\n'
+
+acpq.voice = acpq.voices[ acpq.config.speaker ].voice
+acpq.language = acpq.voices[ acpq.config.speaker ].language
+
+for i in acpq.art
 	console.log i.cyan
 
 requestUrl = '/demo-tts/DemoHTML5Form_V2.php?langdemo=Powered+by+%3Ca+href%3D%22http%3A%2F%2Fwww.acapela-vaas.com%22%3EAcapela+Voice+as+a+Service%3C%2Fa%3E.+For+demo+and+evaluation+purpose+only%2C+for+commercial+use+of+generated+sound+files+please+go+to+%3Ca+href%3D%22http%3A%2F%2Fwww.acapela-box.com%22%3Ewww.acapela-box.com%3C%2Fa%3E'
@@ -26,9 +33,6 @@ class TTS
 		@queue = []
 		@playing = false
 
-		@language = 'sonid10'
-		@voice = 'Sharon'
-
 	say: (quote) ->
 		o = line: quote, link: '', file: null
 		@queue.unshift o
@@ -40,7 +44,7 @@ class TTS
 
 		o = @queue.pop()
 
-		hash = crypto.createHash('md5').update("#{@voice}#{o.line}").digest('hex')
+		hash = crypto.createHash('md5').update("#{acpq.voice}#{o.line}").digest('hex')
 		o.path = "store/#{hash}.mp3"
 
 		try
@@ -53,8 +57,8 @@ class TTS
 		that = this
 
 		data = querystring.stringify
-			MyLanguages: @language
-			MySelectedVoice: @voice
+			MyLanguages: acpq.language
+			MySelectedVoice: acpq.voice
 			MyTextForTTS: o.line
 			t: 1
 			SendToVaaS: 0
