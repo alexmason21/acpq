@@ -1,7 +1,0 @@
-turkish:
-sonid34
-Ipek
-
-normal:
-sonid10
-Sharon
